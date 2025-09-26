@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carta para Valentina</title>
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Dancing+Script&family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Dancing Script', cursive;
+      background-color: #f3e5f5;
+      overflow: hidden;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    #hola-text {
+      font-family: 'Allura', cursive;
+      font-size: 3em;
+      margin-top: 50px;
+      animation: slideText 2s forwards;
+    }
+
+    @keyframes slideText {
+      0% { transform: translateX(-100%); opacity: 0; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
+
+    #letter {
+      display: none;
+      background-color: #fff9c4;
+      padding: 20px;
+      border-radius: 15px;
+      max-width: 400px;
+      margin: 20px auto;
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.1em;
+      color: #444;
+      position: relative;
+      top: 50%;
+      transform: translateY(50%);
+      opacity: 0;
+      transition: all 1.5s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="hola-text">Hola mi amor</h1>
+
+  <div id="letter">
+    <p>Valentina,</p>
+    <p>No te puedes imaginar lo feliz que me hace encontrarme contigo celebrando otra vuelta al sol, de saber que nos sigues alegrando la existencia con tu presencia, de ver todo lo que has logrado, de ver todo lo que has crecido y en la maravillosa mujer en la que te has convertido.</p>
+    <p>Gracias por darme la dicha de seguir a tu lado, gracias por seguir con nosotros en la tierra a pesar de lo complicado que todo se ha puesto.</p>
+    <p>Me siento bendecida por tenerte en mi vida y orgullosa de ti en todos los aspectos posible a la que admiro inmensamente.</p>
+    <p style="font-family: 'Great Vibes', cursive;">Felicidades, mi dulce amor.</p>
+    <p style="text-align:right;">Con amor, Jessica</p>
+  </div>
+
+  <script>
+    const letter = document.getElementById('letter');
+    const holaText = document.getElementById('hola-text');
+
+    // Después de 2 segundos, animar la carta
+    setTimeout(() => {
+      holaText.style.display = 'none'; // se oculta el texto "Hola mi amor"
+
+      // Mostrar y animar la carta desde abajo
+      letter.style.display = 'block';
+      setTimeout(() => {
+        letter.style.top = '0';
+        letter.style.transform = 'translateY(0)';
+        letter.style.opacity = '1';
+      }, 50);
+    }, 2000);
+  </script>
+
+</body>
+</html>
